@@ -7,6 +7,9 @@ public class Customers {
     private String address;
     private String city;
     private String state;
+    private int zipCode;
+    private Long phone_number;
+    private String emailId;
 
     public Customers(int cusId, String firstName, String lastName, String address, String city, String state, int zipCode, Long phone_number, String emailId) {
         this.cusId = cusId;
@@ -96,7 +99,5 @@ public class Customers {
         this.emailId = emailId;
     }
 
-    private int zipCode;
-    private Long phone_number;
-    private String emailId;
+
 }

@@ -5,32 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce222ccf-13ed-4be6-a0de-f52869d7dced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Customers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Employees.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Restaurants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CustomersMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/EmployeesMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RestaurantsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CustomersDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/RestaurantsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/CustomersService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/EmployeesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/RestuarantsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/CustomersServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/EmployeesServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/RestaurantsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/DButil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Carts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Cuisines.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Deliveries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/MenuItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Menus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/OperatingHours.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/OrderItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Payments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Ratings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RatingsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DOMParserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/RatingsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/RatingsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/RatingsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/rating.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/transportationmodes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Customers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/EmployeesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/EmployeesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/EmployeesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/EmployeesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/EmployeesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/EmployeesServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,20 +73,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/karth/Documents/Exam/fooddelivery",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karth/Documents/Exam/fooddelivery&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="FoodDeliveryMain" type="Application" factoryName="Application" temporary="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../Program Files/Java/jdk-11" />

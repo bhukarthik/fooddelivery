@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicle id="2">
+        <vehicle_name>Car</vehicle_name>
+        <vehicle_status>Available</vehicle_status>
+        <empid>102</empid>
+        <orders_order_id>1001</orders_order_id>
+</vehicle>
