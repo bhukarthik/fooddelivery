@@ -5,34 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce222ccf-13ed-4be6-a0de-f52869d7dced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Carts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Cuisines.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Deliveries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/MenuItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Menus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/OperatingHours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/OrderItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Orders.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Payments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/Ratings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/RatingsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/DOMParserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/RatingsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/RatingsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/RatingsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/rating.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/transportationmodes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CouponsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CouponsDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/CouponsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/CouponsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Coupons.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/vehicle.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Customers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Customers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/EmployeesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/EmployeesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/EmployeesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/EmployeesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/EmployeesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/EmployeesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

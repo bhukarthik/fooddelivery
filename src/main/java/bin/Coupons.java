@@ -1,67 +1,82 @@
 package bin;
 
 public class Coupons {
-    private int couponId;
-    private String couponCode;
-    private int menuId;
-    private int restaurantId;
-    private int customerId;
-    private int cartId;
+    private int coupon_id;
+    private String coupon_code;
+    private int menu_id;
+    private int restaurant_id;
+    private int customer_id;
+    private int cart_id;
 
-    public Coupons(int couponId, String couponCode, int menuId, int restaurantId, int customerId, int cartId) {
-        this.couponId = couponId;
-        this.couponCode = couponCode;
-        this.menuId = menuId;
-        this.restaurantId = restaurantId;
-        this.customerId = customerId;
-        this.cartId = cartId;
+    public Coupons() {
     }
 
-    public int getCouponId() {
-        return couponId;
+    public Coupons(int coupon_id, String coupon_code, int menu_id, int restaurant_id, int customer_id, int cart_id) {
+        this.coupon_id = coupon_id;
+        this.coupon_code = coupon_code;
+        this.menu_id = menu_id;
+        this.restaurant_id = restaurant_id;
+        this.customer_id = customer_id;
+        this.cart_id = cart_id;
     }
 
-    public void setCouponId(int couponId) {
-        this.couponId = couponId;
+    public int getCoupon_id() {
+        return coupon_id;
     }
 
-    public String getCouponCode() {
-        return couponCode;
+    public void setCoupon_id(int coupon_id) {
+        this.coupon_id = coupon_id;
     }
 
-    public void setCouponCode(String couponCode) {
-        this.couponCode = couponCode;
+    public String getCoupon_code() {
+        return coupon_code;
     }
 
-    public int getMenuId() {
-        return menuId;
+    public void setCoupon_code(String coupon_code) {
+        this.coupon_code = coupon_code;
     }
 
-    public void setMenuId(int menuId) {
-        this.menuId = menuId;
+    public int getMenu_id() {
+        return menu_id;
     }
 
-    public int getRestaurantId() {
-        return restaurantId;
+    public void setMenu_id(int menu_id) {
+        this.menu_id = menu_id;
     }
 
-    public void setRestaurantId(int restaurantId) {
-        this.restaurantId = restaurantId;
+    public int getRestaurant_id() {
+        return restaurant_id;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public void setRestaurant_id(int restaurant_id) {
+        this.restaurant_id = restaurant_id;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public int getCustomer_id() {
+        return customer_id;
     }
 
-    public int getCartId() {
-        return cartId;
+    public void setCustomer_id(int customer_id) {
+        this.customer_id = customer_id;
     }
 
-    public void setCartId(int cartId) {
-        this.cartId = cartId;
+    public int getCart_id() {
+        return cart_id;
+    }
+
+    public void setCart_id(int cart_id) {
+        this.cart_id = cart_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Coupons{" +
+               "coupon_id=" + coupon_id +
+               ", coupon_code='" + coupon_code + '\'' +
+               ", menu_id=" + menu_id +
+               ", restaurant_id=" + restaurant_id +
+               ", customer_id=" + customer_id +
+               ", cart_id=" + cart_id +
+               '}';
     }
 }
