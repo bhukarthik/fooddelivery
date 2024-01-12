@@ -14,6 +14,6 @@ public class RestaurantsServiceImpl implements RestuarantsService {
     }
     @Override
     public void getRestaurantId(int id) {
-
+        restaurantsDAO.getRestaurantsById(id);
     }
 }

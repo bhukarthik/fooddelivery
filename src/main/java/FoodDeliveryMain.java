@@ -90,8 +90,8 @@ public class FoodDeliveryMain {
         }
     }
     public void employeeInsert(){
-        Employees employees = new Employees(108,"Mike","Hussy",4082089192L);
-        EmployeesService employeesService = new EmployeesServiceImpl();
+        Employees employees = new Employees(108,"Mike","Hussy",4082089192L,"Car1");
+        EmployeesServiceImpl employeesService = new EmployeesServiceImpl();
         employeesService.createEmployees(employees);
     }
     public void employeeTotalCount(){
@@ -112,21 +112,21 @@ public class FoodDeliveryMain {
     }
     public void customerInsert(){
         Customers customers = new Customers(104,"Sam","Smith","204 Mebane RD","Mebane","NC",27273,54252341235L,"ssmith@gmail.com");
-        CustomersService customersService = new CustomersServiceImpl();
+        CustomersServiceImpl customersService = new CustomersServiceImpl();
         customersService.createCustomers(customers);
     }
     public void findCustomers(){
-        CustomersService customersServiceObj = new CustomersServiceImpl();
+        CustomersServiceImpl customersServiceObj = new CustomersServiceImpl();
         customersServiceObj.getCustomerId(104);
     }
     public void restaurantsInsert(){
         Restaurants restaurants = new Restaurants(205, "Chick-fil-A", "140 N Main St", "Varina", 27539, 8541236754L, 3);
-        RestuarantsService restuarantsService = new RestaurantsServiceImpl();
+        RestaurantsServiceImpl restuarantsService = new RestaurantsServiceImpl();
         restuarantsService.createRestaurants(restaurants);
     }
     public void findRestaurants(){
-        RestuarantsService restaurantsServiceObj = new RestaurantsServiceImpl();
-        restaurantsServiceObj.getRestaurantId(205);
+        RestuarantsService restaurantsServiceImplObj = new RestaurantsServiceImpl();
+        restaurantsServiceImplObj.getRestaurantId(205);
     }
     public void transportationModes()  {
         try {

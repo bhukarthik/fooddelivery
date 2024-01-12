@@ -14,6 +14,7 @@ public class CustomersServiceImpl implements CustomersService {
     }
     @Override
     public void getCustomerId(int id) {
+        customersDAO.getCustomersByID(id);
 
     }
 }

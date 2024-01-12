@@ -2,6 +2,8 @@ package dao.impl;
 
 import bin.Restaurants;
 import dao.RestaurantsMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import util.DButil;
 
 import java.sql.Connection;
@@ -11,7 +13,7 @@ import java.sql.SQLException;
 
 public class RestaurantsDAO implements RestaurantsMapper {
     private Connection connection;
-
+    private static final Logger LOGGER = (Logger) LogManager.getLogger(RestaurantsDAO.class);
     public RestaurantsDAO() {
         connection = DButil.getConnection();
     }
@@ -48,7 +50,13 @@ public class RestaurantsDAO implements RestaurantsMapper {
                 restaurants.setPhoneNumber(rs.getLong("phone_number"));
                 restaurants.setRatingId(rs.getInt("rating_id"));
             }
-
+            LOGGER.info("Restaurant ID "+restaurants.getRestaurantId());
+            LOGGER.info("Restaurant Name "+restaurants.getRestaurantName());
+            LOGGER.info("Address "+restaurants.getAddress());
+            LOGGER.info("City "+restaurants.getCity());
+            LOGGER.info("Zip Code "+restaurants.getZipCode());
+            LOGGER.info("Phone Number "+restaurants.getPhoneNumber());
+            LOGGER.info("Rating Id "+restaurants.getRatingId());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

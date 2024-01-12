@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce222ccf-13ed-4be6-a0de-f52869d7dced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CouponsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CouponsDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/CouponsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/impl/CouponsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Coupons.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vehicle.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/MyBatisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/FoodDeliveryMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Coupons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/TransportationModes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Employees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Employees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/CustomersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CustomersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/EmployeesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/RestaurantsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/RestaurantsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/CustomersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/CustomersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/RestaurantsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/RestaurantsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

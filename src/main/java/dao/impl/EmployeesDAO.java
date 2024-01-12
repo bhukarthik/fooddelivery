@@ -13,6 +13,7 @@ import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import util.DButil;
+import util.MyBatisUtil;
 
 import java.io.*;
 import java.sql.Connection;
@@ -21,11 +22,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import static util.MyBatisUtil.sesFact;
+
 
 public class EmployeesDAO implements EmployeesMapper {
     private final Connection connection;
-    private static SqlSessionFactory sesFact = null;
-    private static SqlSessionFactory factory = null;
+
     private static final Logger LOGGER = (Logger) LogManager.getLogger(EmployeesDAO.class);
 
     public EmployeesDAO() {
@@ -34,11 +36,12 @@ public class EmployeesDAO implements EmployeesMapper {
 
     public void addEmployees(Employees employees) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into fooddelivery.employees(empid,first_name,last_name,phone_number)values(?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("insert into fooddelivery.employees(empid,first_name,last_name,phone_number,transportationmodes_vehicleid)values(?,?,?,?,?)");
             preparedStatement.setInt(1, employees.getEmpId());
             preparedStatement.setString(2, employees.getFirstName());
             preparedStatement.setString(3, employees.getLastName());
             preparedStatement.setLong(4, employees.getPhoneNumber());
+            preparedStatement.setString(5,employees.getTransportationmodesvehicleid());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -68,31 +71,9 @@ public class EmployeesDAO implements EmployeesMapper {
     }
 
     public int getNumberOfEmployees() {
-        String resource = "src/main/resources/mybatis-config.xml";
         int numberOfEmployees=0;
-        try {
-            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream(resource);
-            Properties prop = new Properties();
-            prop.setProperty("driver", "com.mysql.cj.jdbc.Driver");
-            prop.setProperty("url", "jdbc:mysql://localhost:3306/fooddelivery");
-            prop.setProperty("user", "root");
-            prop.setProperty("password", "JAutomation@123");
-            PooledDataSource ds = new PooledDataSource();
-            ds.setDriver(prop.getProperty("driver"));
-            ds.setUrl(prop.getProperty("url"));
-            ds.setUsername(prop.getProperty("user"));
-            ds.setPassword(prop.getProperty("password"));
-            TransactionFactory trFact = new JdbcTransactionFactory();
-            Environment environment = new Environment("development", trFact,ds);
-            Configuration config = new Configuration(environment);
-            SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-            SqlSessionFactory factory = builder.build(config);
-            config.addMapper(EmployeesMapper.class);
-            sesFact = new SqlSessionFactoryBuilder().build(config);
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+        MyBatisUtil myBatisUtil = new MyBatisUtil();
+        myBatisUtil.myBatisConnection();
         try (SqlSession session = sesFact.openSession()){
             numberOfEmployees = session.selectOne("getNumberOfEmployees");
             LOGGER.info("Total Count "+numberOfEmployees);

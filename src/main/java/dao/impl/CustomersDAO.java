@@ -3,6 +3,8 @@ package dao.impl;
 import bin.Customers;
 import bin.Employees;
 import dao.CustomersMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import util.DButil;
 
 import java.sql.Connection;
@@ -11,8 +13,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class CustomersDAO implements CustomersMapper {
-private Connection connection;
+    private Connection connection;
 
+    private static final Logger LOGGER = (Logger) LogManager.getLogger(CustomersDAO.class);
     public CustomersDAO(){
         connection = DButil.getConnection();
     }
@@ -50,6 +53,15 @@ private Connection connection;
                 customers.setPhone_number(rs.getLong("phone_number"));
                 customers.setEmailId(rs.getString("email_id"));
             }
+            LOGGER.info("Customer Id "+customers.getCusId());
+            LOGGER.info("First Name "+customers.getFirstName());
+            LOGGER.info("Last Name "+customers.getLastName());
+            LOGGER.info("Address "+customers.getAddress());
+            LOGGER.info("City "+customers.getCity());
+            LOGGER.info("State "+customers.getCity());
+            LOGGER.info("Zip Code "+customers.getZipCode());
+            LOGGER.info("Phone Number "+customers.getPhone_number());
+            LOGGER.info("Email Id "+customers.getEmailId());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -5,12 +5,14 @@ public class Employees {
     private String firstName;
     private String lastName;
     private long phoneNumber;
+    private String transportationmodesvehicleid;
 
-    public Employees(int empId, String firstName, String lastName, long phoneNumber) {
+    public Employees(int empId, String firstName, String lastName, long phoneNumber, String transportationmodesvehicleid) {
         this.empId = empId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        this.transportationmodesvehicleid = transportationmodesvehicleid;
     }
 
     public Employees() {
@@ -49,5 +51,11 @@ public class Employees {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getTransportationmodesvehicleid() {
+        return transportationmodesvehicleid;
+    }
 
+    public void setTransportationmodesvehicleid(String transportationmodesvehicleid) {
+        this.transportationmodesvehicleid = transportationmodesvehicleid;
+    }
 }
