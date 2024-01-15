@@ -2,6 +2,7 @@ package service.impl;
 
 import bin.Employees;
 import dao.impl.EmployeesDAO;
+import dao.mybatis.EmployeeDAO;
 import service.EmployeesService;
 
 import java.io.IOException;
@@ -16,12 +17,13 @@ public class EmployeesServiceImpl implements EmployeesService {
     @Override
     public void getEmployeeId(int id) {
         employeesDAO.getEmployeesById(id);
+        //employeesDAO.getEmployeesById(id);
 
     }
 
     @Override
     public int getNumberOfEmployees() {
-        EmployeesDAO employeesDAO1 = new EmployeesDAO();
-        return employeesDAO1.getNumberOfEmployees();
+        EmployeeDAO employeeDAO = new EmployeeDAO();
+        return employeeDAO.getNumberOfEmployees();
     }
 }

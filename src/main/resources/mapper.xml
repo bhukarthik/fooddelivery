@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+        'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='dao.EmployeesMapper'>
+    <select id='getUserById' parameterType='int' resultType='bin.Employees'>
+        SELECT
+        empid as Emp_Id,
+        phone_number as phone_number,
+        first_name as firstName,
+        last_name as lastName,
+        transportationmodes_vehicleid as vehicle_id
+        FROM USER
+        WHERE empid = #{Emp_Id}
+    </select>
+    <!-- Instead of referencing Fully Qualified Class Names we can register Aliases in mybatis-config.xml and use Alias names. -->
+    <resultMap type='Employees' id='UserResult'>
+        <id property='Emp_Id' column='empid'/>
+        <result property='firstName' column='first_name'/>
+        <result property='lastName' column='last_name'/>
+        <result property='phone_number' column='phone_number'/>
+        <result property='vehicle_id' column='transportationmodes_vehicleid'/>
+    </resultMap>
+
+    <select id='getAllUsers' resultMap='UserResult'>
+        SELECT * FROM fooddelivery.employees
+    </select>
+
+    <insert id='insertUser' parameterType='Employees' useGeneratedKeys='true' keyProperty='userId'>
+        INSERT INTO fooddelivery.employees(empid,first_name,last_name,phone_number,transportationmodes_vehicleid)
+        VALUES(#{Emp_Id},#{firstName},#{lastName},#{phone_number},#{vehicle_id})
+    </insert>
+</mapper>

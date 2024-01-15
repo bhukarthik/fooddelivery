@@ -5,6 +5,7 @@ import bin.Ratings;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import util.ConnectionManager;
 import util.DButil;
 
 import java.sql.Connection;
@@ -14,13 +15,14 @@ import java.sql.SQLException;
 public class RatingsDAO {
     private final Connection connection;
     private static final Logger LOGGER = (Logger) LogManager.getLogger(RatingsDAO.class);
-
+public static final String ratingsSQL = "select * from employees where empid=?";
     public RatingsDAO() {
-        connection = DButil.getConnection();
+
+        connection = ConnectionManager.get();
     }
     public void addRatings(Ratings ratings) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into fooddelivery.ratings(rating_id,rating_code,customer_id,customer_name,restaurant_name,restaurant_id)values(?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement(ratingsSQL);
             preparedStatement.setInt(1, ratings.getRatingId());
             preparedStatement.setFloat(2, ratings.getRatingCode());
             preparedStatement.setInt(3, ratings.getCustomerId());
@@ -31,6 +33,9 @@ public class RatingsDAO {
             LOGGER.info("Row Inserted into DB");
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+        finally{
+            ConnectionManager.closePool();
         }
     }
 }

@@ -1,0 +1,18 @@
+[
+  {
+    "coupon_id" : 121,
+    "coupon_code" : "SALE",
+    "menu_id" : 15,
+    "restaurant_id" : 201,
+    "customer_id" : 102,
+    "cart_id" : 13
+  },
+  {
+    "coupon_id" : 111,
+    "coupon_code" : "WELCOME",
+    "menu_id" : 16,
+    "restaurant_id" : 208,
+    "customer_id" : 103,
+    "cart_id" : 17
+  }
+]

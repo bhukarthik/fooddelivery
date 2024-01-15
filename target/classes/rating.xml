@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DATA>
+   <ROW>
+        <rating_id>6</rating_id>
+        <rating_code>4.8</rating_code>
+        <customer_id>103</customer_id>
+        <customer_name>ROSS COOPER</customer_name>
+        <restaurant_name>PANDA EXPRESS</restaurant_name>
+        <restaurant_id>204</restaurant_id>
+    </ROW>
+    <ROW>
+        <rating_id>7</rating_id>
+        <rating_code>3.1</rating_code>
+        <customer_id>101</customer_id>
+        <customer_name>DEREK SMITH</customer_name>
+        <restaurant_name>DENNYS</restaurant_name>
+        <restaurant_id>202</restaurant_id>
+    </ROW>
+    <ROW>
+        <rating_id>8</rating_id>
+        <rating_code>4.4</rating_code>
+        <customer_id>118</customer_id>
+        <customer_name>JILL DONG</customer_name>
+        <restaurant_name>OLIVE GARDEN</restaurant_name>
+        <restaurant_id>200</restaurant_id>
+    </ROW>
+</DATA>

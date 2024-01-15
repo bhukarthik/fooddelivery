@@ -5,7 +5,8 @@ import bin.Ratings;
 import dao.CouponsMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import util.DButil;
+import util.ConnectionManager;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,14 +16,15 @@ public class CouponsDAO implements CouponsMapper {
 
     private final Connection connection;
     private static final Logger LOGGER = (Logger) LogManager.getLogger(CouponsDAO.class);
-
+    private static final String couponsSQL ="INSERT INTO fooddelivery.coupons(coupon_id,coupon_code,menu_id,restaurant_id,customer_id,cart_id) VALUES (?,?,?,?,?,?)";
     public CouponsDAO() {
-        connection = DButil.getConnection();
+        connection = ConnectionManager.get();
     }
 
     public void addCoupons(Coupons coupons) {
+
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO fooddelivery.coupons(coupon_id,coupon_code,menu_id,restaurant_id,customer_id,cart_id) VALUES (?,?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement(couponsSQL);
             preparedStatement.setInt(1, coupons.getCoupon_id());
             preparedStatement.setString(2, coupons.getCoupon_code());
             preparedStatement.setInt(3, coupons.getMenu_id());
@@ -33,6 +35,9 @@ public class CouponsDAO implements CouponsMapper {
             LOGGER.info("Row Inserted into DB");
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+        finally {
+            ConnectionManager.closePool();
         }
     }
 }

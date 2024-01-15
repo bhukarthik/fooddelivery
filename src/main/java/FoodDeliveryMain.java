@@ -3,6 +3,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import dao.impl.CouponsDAO;
 import dao.impl.DOMParserDAO;
 import javax.xml.*;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +12,7 @@ import org.xml.sax.SAXException;
 import service.CustomersService;
 import service.EmployeesService;
 import service.RestuarantsService;
+import service.impl.CouponsServiceImpl;
 import service.impl.CustomersServiceImpl;
 import service.impl.EmployeesServiceImpl;
 import service.impl.RestaurantsServiceImpl;
@@ -95,7 +97,7 @@ public class FoodDeliveryMain {
         employeesService.createEmployees(employees);
     }
     public void employeeTotalCount(){
-        EmployeesService employeesServiceObj = new EmployeesServiceImpl();
+        EmployeesServiceImpl employeesServiceObj = new EmployeesServiceImpl();
         employeesServiceObj.getNumberOfEmployees();
     }
     public void domParser(){
@@ -159,5 +161,8 @@ public class FoodDeliveryMain {
 
         //Coupons couponsObj = new Coupons();
         //couponsObj.setCoupon_id(stringEmp);*/
+        Coupons couponsObj = new Coupons(132,"FREE",19,204,104,10);
+        CouponsServiceImpl couponsServiceObj = new CouponsServiceImpl();
+        couponsServiceObj.createCoupons(couponsObj);
     }
 }

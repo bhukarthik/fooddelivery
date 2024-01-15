@@ -12,6 +12,7 @@ import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import util.ConnectionManager;
 import util.DButil;
 import util.MyBatisUtil;
 
@@ -29,29 +30,34 @@ public class EmployeesDAO implements EmployeesMapper {
     private final Connection connection;
 
     private static final Logger LOGGER = (Logger) LogManager.getLogger(EmployeesDAO.class);
+    public static final String employeesSQL = "insert into fooddelivery.employees(empid,first_name,last_name,phone_number,transportationmodes_vehicleid)values(?,?,?,?,?)";
+    public static final String empidSQL = "select * from employees where empid=?";
 
     public EmployeesDAO() {
-        connection = DButil.getConnection();
+        connection = ConnectionManager.get();
     }
 
     public void addEmployees(Employees employees) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into fooddelivery.employees(empid,first_name,last_name,phone_number,transportationmodes_vehicleid)values(?,?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement(employeesSQL);
             preparedStatement.setInt(1, employees.getEmpId());
             preparedStatement.setString(2, employees.getFirstName());
             preparedStatement.setString(3, employees.getLastName());
             preparedStatement.setLong(4, employees.getPhoneNumber());
-            preparedStatement.setString(5,employees.getTransportationmodesvehicleid());
+            preparedStatement.setString(5, employees.getTransportationmodesvehicleid());
             preparedStatement.executeUpdate();
+            LOGGER.info("Row Inserted into DB");
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            ConnectionManager.closePool();
         }
     }
 
     public Employees getEmployeesById(int employeeId) {
         Employees employees = new Employees();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("select * from employees where empid=?");
+            PreparedStatement preparedStatement = connection.prepareStatement(empidSQL);
             preparedStatement.setInt(1, employeeId);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
@@ -60,24 +66,19 @@ public class EmployeesDAO implements EmployeesMapper {
                 employees.setLastName(rs.getString("last_name"));
                 employees.setPhoneNumber(rs.getLong("phone_number"));
             }
-            LOGGER.info("Employee Id "+employees.getEmpId());
-            LOGGER.info("First Name "+employees.getFirstName());
-            LOGGER.info("Last Name "+employees.getLastName());
-            LOGGER.info("Phone Number "+employees.getPhoneNumber());
+            LOGGER.info("Employee Id " + employees.getEmpId());
+            LOGGER.info("First Name " + employees.getFirstName());
+            LOGGER.info("Last Name " + employees.getLastName());
+            LOGGER.info("Phone Number " + employees.getPhoneNumber());
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } finally {
+            ConnectionManager.closePool();
         }
         return employees;
     }
-
     public int getNumberOfEmployees() {
-        int numberOfEmployees=0;
-        MyBatisUtil myBatisUtil = new MyBatisUtil();
-        myBatisUtil.myBatisConnection();
-        try (SqlSession session = sesFact.openSession()){
-            numberOfEmployees = session.selectOne("getNumberOfEmployees");
-            LOGGER.info("Total Count "+numberOfEmployees);
-        }
-        return numberOfEmployees;
+    // No JDBC Implimentation
+        return 0;
     }
 }

@@ -16,6 +16,11 @@ public class MyBatisUtil {
 
     public static SqlSessionFactory sesFact = null;
     private static SqlSessionFactory factory = null;
+
+    public static SqlSessionFactory getSqlSessionFactory() {
+            return factory;
+    }
+
     public void myBatisConnection() {
         String resource = "src/main/resources/mybatis-config.xml";
         try {
