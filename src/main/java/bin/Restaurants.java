@@ -9,8 +9,9 @@ public class Restaurants {
     private int zipCode;
     private long phoneNumber;
     private int ratingId;
+    private int order_id;
 
-    public Restaurants(int restaurantId, String restaurantName, String address, String city, int zipCode, long phoneNumber, int ratingId) {
+    public Restaurants(int restaurantId, String restaurantName, String address, String city, int zipCode, long phoneNumber, int ratingId, int order_id) {
         this.restaurantId = restaurantId;
         this.restaurantName = restaurantName;
         this.address = address;
@@ -18,6 +19,7 @@ public class Restaurants {
         this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
         this.ratingId = ratingId;
+        this.order_id=order_id;
     }
 
     public Restaurants() {
@@ -80,4 +82,11 @@ public class Restaurants {
         this.ratingId = ratingId;
     }
 
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
+    }
 }

@@ -14,17 +14,12 @@ import java.sql.SQLException;
 
 public class CouponsDAO implements CouponsMapper {
 
-    private final Connection connection;
     private static final Logger LOGGER = (Logger) LogManager.getLogger(CouponsDAO.class);
     private static final String couponsSQL ="INSERT INTO fooddelivery.coupons(coupon_id,coupon_code,menu_id,restaurant_id,customer_id,cart_id) VALUES (?,?,?,?,?,?)";
-    public CouponsDAO() {
-        connection = ConnectionManager.get();
-    }
-
     public void addCoupons(Coupons coupons) {
 
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(couponsSQL);
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(couponsSQL)){
             preparedStatement.setInt(1, coupons.getCoupon_id());
             preparedStatement.setString(2, coupons.getCoupon_code());
             preparedStatement.setInt(3, coupons.getMenu_id());

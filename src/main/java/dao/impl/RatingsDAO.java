@@ -13,16 +13,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class RatingsDAO {
-    private final Connection connection;
     private static final Logger LOGGER = (Logger) LogManager.getLogger(RatingsDAO.class);
-public static final String ratingsSQL = "select * from employees where empid=?";
-    public RatingsDAO() {
+    public static final String ratingsSQL = "select * from employees where empid=?";
 
-        connection = ConnectionManager.get();
-    }
     public void addRatings(Ratings ratings) {
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(ratingsSQL);
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(ratingsSQL)){
             preparedStatement.setInt(1, ratings.getRatingId());
             preparedStatement.setFloat(2, ratings.getRatingCode());
             preparedStatement.setInt(3, ratings.getCustomerId());

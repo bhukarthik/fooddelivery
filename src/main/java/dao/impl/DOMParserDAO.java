@@ -20,6 +20,7 @@ public class DOMParserDAO {
         this.fileName=fileName;
     }
     public void parse() throws Exception {
+
         File inputDataFile = new File(fileName);
         DocumentBuilderFactory dbldrFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = dbldrFactory.newDocumentBuilder();

@@ -2,17 +2,14 @@ package dao.mybatis;
 
 import bin.Employees;
 import dao.EmployeesMapper;
-import dao.impl.EmployeesDAO;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import org.apache.ibatis.session.SqlSession;
 import util.MyBatisUtil;
-
 import static util.MyBatisUtil.sesFact;
 
-public class EmployeeDAO implements EmployeesMapper{
-    private static final Logger LOGGER = (Logger) LogManager.getLogger(EmployeeDAO.class);
+public class EmployeeMyBatisDAO implements EmployeesMapper{
+    private static final Logger LOGGER = (Logger) LogManager.getLogger(EmployeeMyBatisDAO.class);
     @Override
     public void addEmployees(Employees employees) {
         MyBatisUtil myBatisUtil = new MyBatisUtil();
@@ -22,6 +19,7 @@ public class EmployeeDAO implements EmployeesMapper{
             EmployeesMapper userMapper = sqlSession.getMapper(EmployeesMapper.class);
             userMapper.addEmployees(employees);
             sqlSession.commit();
+            LOGGER.info("Employee Record Created");
         }finally{
             sqlSession.close();
         }
@@ -33,7 +31,13 @@ public class EmployeeDAO implements EmployeesMapper{
         SqlSession sqlSession = sesFact.openSession();
         try{
             EmployeesMapper userMapper = sqlSession.getMapper(EmployeesMapper.class);
-            return userMapper.getEmployeesById(empId);
+            Employees employees= userMapper.getEmployeesById(empId);
+            LOGGER.info("Employee Id "+employees.getEmpId());
+            LOGGER.info("Employee First Name "+employees.getFirstName());
+            LOGGER.info("Employee Last Name "+employees.getFirstName());
+            LOGGER.info("Employee Phone Number "+employees.getPhoneNumber());
+            LOGGER.info("Transportation Mode "+employees.getTransportationmodesvehicleid());
+            return employees;
         }finally{
             sqlSession.close();
         }

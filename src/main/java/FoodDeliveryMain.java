@@ -9,13 +9,8 @@ import javax.xml.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.xml.sax.SAXException;
-import service.CustomersService;
-import service.EmployeesService;
-import service.RestuarantsService;
-import service.impl.CouponsServiceImpl;
-import service.impl.CustomersServiceImpl;
-import service.impl.EmployeesServiceImpl;
-import service.impl.RestaurantsServiceImpl;
+import service.*;
+import service.impl.*;
 import util.DButil;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -46,13 +41,12 @@ public class FoodDeliveryMain {
         LOGGER.info("4. Find Employees ");
         LOGGER.info("5. Find Customers ");
         LOGGER.info("6. Find Restaurants ");
-        LOGGER.info("7. Find Total Employee (using MyBatis) ");
-        LOGGER.info("8. Submit Ratings (DOM Parser) ");
-        LOGGER.info("9. Transportation Modes (JAXB Parser) ");
-        LOGGER.info("10.Coupons Adding (JACKSON Parser) ");
+        LOGGER.info("7. Find Total Employee ");
+        LOGGER.info("8. Submit Ratings");
+        LOGGER.info("9. Add Transportation Modes (JAXB Parser) ");
+        LOGGER.info("10.Add Coupons Adding (JACKSON Parser) ");
         LOGGER.info("Enter You Choice [1-10] :");
         choice = mainMenu.nextInt();
-
         switch (choice) {
             case 1:
                 obj.employeeInsert();
@@ -92,77 +86,46 @@ public class FoodDeliveryMain {
         }
     }
     public void employeeInsert(){
-        Employees employees = new Employees(108,"Mike","Hussy",4082089192L,"Car1");
-        EmployeesServiceImpl employeesService = new EmployeesServiceImpl();
+        Employees employees = new Employees();
+        EmployeesService employeesService = new EmployeesServiceImpl();
         employeesService.createEmployees(employees);
     }
     public void employeeTotalCount(){
         EmployeesServiceImpl employeesServiceObj = new EmployeesServiceImpl();
-        employeesServiceObj.getNumberOfEmployees();
+        employeesServiceObj.getEmployeeId();
     }
     public void domParser(){
-        DOMParserDAO domParserDAO = new DOMParserDAO("src/main/resources/rating.xml");
-        try {
-            domParserDAO.parse();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        DOMParserImpl domParser = new DOMParserImpl();
+        domParser.parseImp();
     }
     public void findEmployee(){
-        EmployeesServiceImpl employeesServiceObj1= new EmployeesServiceImpl();
-        employeesServiceObj1.getEmployeeId(120);
+        EmployeesService employeesServiceObj1= new EmployeesServiceImpl();
+        employeesServiceObj1.getEmployeeId();
     }
     public void customerInsert(){
-        Customers customers = new Customers(104,"Sam","Smith","204 Mebane RD","Mebane","NC",27273,54252341235L,"ssmith@gmail.com");
-        CustomersServiceImpl customersService = new CustomersServiceImpl();
-        customersService.createCustomers(customers);
+
+        CustomersService customersService = new CustomersServiceImpl();
+        customersService.createCustomers();
     }
     public void findCustomers(){
-        CustomersServiceImpl customersServiceObj = new CustomersServiceImpl();
-        customersServiceObj.getCustomerId(104);
+        CustomersService customersServiceObj = new CustomersServiceImpl();
+        customersServiceObj.getCustomerId();
     }
     public void restaurantsInsert(){
-        Restaurants restaurants = new Restaurants(205, "Chick-fil-A", "140 N Main St", "Varina", 27539, 8541236754L, 3);
-        RestaurantsServiceImpl restuarantsService = new RestaurantsServiceImpl();
-        restuarantsService.createRestaurants(restaurants);
+        RestuarantsService restuarantsService = new RestaurantsServiceImpl();
+        restuarantsService.createRestaurants();
+
     }
     public void findRestaurants(){
         RestuarantsService restaurantsServiceImplObj = new RestaurantsServiceImpl();
-        restaurantsServiceImplObj.getRestaurantId(205);
+        restaurantsServiceImplObj.getRestaurantId();
     }
     public void transportationModes()  {
-        try {
-            File file = new File("src/main/resources/transportationmodes.xml");
-            File xsdFile = new File("src/main/resources/vehicle.xsd");
-            JAXBContext jaxbContext = JAXBContext.newInstance(bin.TransportationModes.class);
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-            TransportationModes transportationModesObj=(TransportationModes) jaxbUnmarshaller.unmarshal(file);
-            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema vehicleSchema = sf.newSchema(xsdFile);
-            jaxbUnmarshaller.setSchema(vehicleSchema);
-            LOGGER.info("Transportation Modes"+transportationModesObj);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            throw new RuntimeException(e);
-        }
+        TransportationMode transportationMode = new TransportationModeImpl();
+        transportationMode.addTransportation();
     }
-    public void addingCoupons() throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        File jsonData = new File("src/main/resources/Coupons.json");
-        List<Coupons> coupons = objectMapper.readValue(jsonData, new TypeReference<>(){});
-        LOGGER.info("coupons Object\n"+coupons);
-
-        /*objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-        StringWriter stringEmp = new StringWriter();
-        objectMapper.writeValue(stringEmp, coupons);
-        LOGGER.info("Coupons JSON is\n"+stringEmp);
-        JSONPObject jsonpObject = new JSONPObject(stringEmp);
-
-        //Coupons couponsObj = new Coupons();
-        //couponsObj.setCoupon_id(stringEmp);*/
-        Coupons couponsObj = new Coupons(132,"FREE",19,204,104,10);
-        CouponsServiceImpl couponsServiceObj = new CouponsServiceImpl();
-        couponsServiceObj.createCoupons(couponsObj);
+    public void addingCoupons()  {
+        CouponsService couponsServiceObj = new CouponsServiceImpl();
+        couponsServiceObj.createCoupons();
     }
 }

@@ -14,8 +14,6 @@ public class Carts {
         this.price = price;
         this.quantity = quantity;
     }
-
-
     public int getCartId() {
         return cartId;
     }

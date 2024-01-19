@@ -27,19 +27,13 @@ import static util.MyBatisUtil.sesFact;
 
 
 public class EmployeesDAO implements EmployeesMapper {
-    private final Connection connection;
-
     private static final Logger LOGGER = (Logger) LogManager.getLogger(EmployeesDAO.class);
     public static final String employeesSQL = "insert into fooddelivery.employees(empid,first_name,last_name,phone_number,transportationmodes_vehicleid)values(?,?,?,?,?)";
     public static final String empidSQL = "select * from employees where empid=?";
 
-    public EmployeesDAO() {
-        connection = ConnectionManager.get();
-    }
-
     public void addEmployees(Employees employees) {
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(employeesSQL);
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(employeesSQL)){
             preparedStatement.setInt(1, employees.getEmpId());
             preparedStatement.setString(2, employees.getFirstName());
             preparedStatement.setString(3, employees.getLastName());
@@ -56,20 +50,21 @@ public class EmployeesDAO implements EmployeesMapper {
 
     public Employees getEmployeesById(int employeeId) {
         Employees employees = new Employees();
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(empidSQL);
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(empidSQL)){
             preparedStatement.setInt(1, employeeId);
-            ResultSet rs = preparedStatement.executeQuery();
-            if (rs.next()) {
-                employees.setEmpId(rs.getInt("empid"));
-                employees.setFirstName(rs.getString("first_name"));
-                employees.setLastName(rs.getString("last_name"));
-                employees.setPhoneNumber(rs.getLong("phone_number"));
+            try(ResultSet rs = preparedStatement.executeQuery();) {
+                if (rs.next()) {
+                    employees.setEmpId(rs.getInt("empid"));
+                    employees.setFirstName(rs.getString("first_name"));
+                    employees.setLastName(rs.getString("last_name"));
+                    employees.setPhoneNumber(rs.getLong("phone_number"));
+                }
+                LOGGER.info("Employee Id " + employees.getEmpId());
+                LOGGER.info("First Name " + employees.getFirstName());
+                LOGGER.info("Last Name " + employees.getLastName());
+                LOGGER.info("Phone Number " + employees.getPhoneNumber());
             }
-            LOGGER.info("Employee Id " + employees.getEmpId());
-            LOGGER.info("First Name " + employees.getFirstName());
-            LOGGER.info("Last Name " + employees.getLastName());
-            LOGGER.info("Phone Number " + employees.getPhoneNumber());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
