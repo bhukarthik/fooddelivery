@@ -17,6 +17,7 @@ public class CustomersDAO implements CustomersMapper {
     private static final Logger LOGGER = (Logger) LogManager.getLogger(CustomersDAO.class);
     private static final String customersSQL = "insert into fooddelivery.customers(cusid,first_name,last_name,address,city,state,zipcode,phone_number,email_id)values(?,?,?,?,?,?,?,?,?)";
     public static final String cusidSqL = "select * from customers where cusid=?";
+    public static final String custPhoneSqL = "select * from customers where phone_number=?";
 
     public void addCustomers(Customers customers) {
         try (Connection connection = ConnectionManager.get();
@@ -53,6 +54,40 @@ public class CustomersDAO implements CustomersMapper {
                     customers.setCity(rs.getString("city"));
                     customers.setState(rs.getString("state"));
                     customers.setZipCode(rs.getInt("zip_code"));
+                    customers.setPhone_number(rs.getLong("phone_number"));
+                    customers.setEmailId(rs.getString("email_id"));
+                }
+                LOGGER.info("Customer Id " + customers.getCusId());
+                LOGGER.info("First Name " + customers.getFirstName());
+                LOGGER.info("Last Name " + customers.getLastName());
+                LOGGER.info("Address " + customers.getAddress());
+                LOGGER.info("City " + customers.getCity());
+                LOGGER.info("State " + customers.getCity());
+                LOGGER.info("Zip Code " + customers.getZipCode());
+                LOGGER.info("Phone Number " + customers.getPhone_number());
+                LOGGER.info("Email Id " + customers.getEmailId());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionManager.closePool();
+        }
+        return customers;
+    }
+    public Customers findCustomersByPhone(String phoneNumber) {
+        Customers customers = new Customers();
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(custPhoneSqL)){
+            preparedStatement.setString(1, phoneNumber);
+            try(ResultSet rs = preparedStatement.executeQuery();) {
+                if (rs.next()) {
+                    customers.setCusId(rs.getInt("cusid"));
+                    customers.setFirstName(rs.getString("first_name"));
+                    customers.setFirstName(rs.getString("last_name"));
+                    customers.setAddress(rs.getString("address"));
+                    customers.setCity(rs.getString("city"));
+                    customers.setState(rs.getString("state"));
+                    customers.setZipCode(rs.getInt("zipcode"));
                     customers.setPhone_number(rs.getLong("phone_number"));
                     customers.setEmailId(rs.getString("email_id"));
                 }

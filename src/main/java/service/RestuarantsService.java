@@ -7,4 +7,6 @@ public interface RestuarantsService {
     public void createRestaurants();
     public void getRestaurantId();
 
+    public void getTopRestaurants(int ratings);
+
 }

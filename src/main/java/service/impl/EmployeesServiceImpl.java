@@ -49,4 +49,8 @@ public class EmployeesServiceImpl implements EmployeesService {
         EmployeeMyBatisDAO employeeMyBatisDAO = new EmployeeMyBatisDAO();
         return employeeMyBatisDAO.getNumberOfEmployees();
     }
+    public void getEmployeeIdTest(int empId) {
+        //employeesDAO.getEmployeesById(id);
+        employeeMyBatisDAOMyBatis.getEmployeesById(empId);
+    }
 }

@@ -46,4 +46,7 @@ public class CustomersServiceImpl implements CustomersService {
         customersDAO.getCustomersByID(id);
 
     }
+    public void getCustomerIdbyPhone(String phoneNumber) {
+         customersDAO.findCustomersByPhone(phoneNumber);
+    }
 }

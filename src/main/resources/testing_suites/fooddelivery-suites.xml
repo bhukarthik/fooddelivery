@@ -1,0 +1,15 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "FoodDelivery">
+    <test name = "FoodDelivery Test">
+        <classes>
+            <class name = "com.solvd.fooddelivery.TopRestaurantTest"/>
+            <class name = "com.solvd.fooddelivery.CouponsTest"/>
+            <class name = "com.solvd.fooddelivery.CustomersTest"/>
+            <class name = "com.solvd.fooddelivery.EmployeesTest"/>
+            <class name = "com.solvd.fooddelivery.RatingsTest"/>
+            <class name = "com.solvd.fooddelivery.TransportaionModesTest"/>
+        </classes>
+    </test>
+</suite>

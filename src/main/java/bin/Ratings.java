@@ -16,6 +16,11 @@ public class Ratings {
         this.restaurantName = restaurantName;
         this.restaurantId = restaurantId;
     }
+
+    public Ratings() {
+
+    }
+
     public int getRatingId() {
         return ratingId;
     }

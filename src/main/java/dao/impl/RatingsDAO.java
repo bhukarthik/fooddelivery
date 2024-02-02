@@ -1,5 +1,6 @@
 package dao.impl;
 
+import bin.Customers;
 import bin.Employees;
 import bin.Ratings;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,11 +11,13 @@ import util.DButil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class RatingsDAO {
     private static final Logger LOGGER = (Logger) LogManager.getLogger(RatingsDAO.class);
     public static final String ratingsSQL = "select * from employees where empid=?";
+    public static final String rateidSqL = "select * from ratings where ratingid=?";
 
     public void addRatings(Ratings ratings) {
         try (Connection connection = ConnectionManager.get();
@@ -34,4 +37,33 @@ public class RatingsDAO {
             ConnectionManager.closePool();
         }
     }
+   public Ratings findRatingById(int ratingID ) {
+        Ratings ratings = new Ratings();
+        try (Connection connection = ConnectionManager.get();
+             PreparedStatement preparedStatement = connection.prepareStatement(rateidSqL)){
+            preparedStatement.setInt(1, ratingID);
+            try(ResultSet rs = preparedStatement.executeQuery();) {
+                if (rs.next()) {
+                    ratings.setRatingId(rs.getInt("rating_id"));
+                    ratings.setRatingCode(rs.getFloat("rating_code"));
+                    ratings.setCustomerId(rs.getInt("customer_id"));
+                    ratings.setCustomerName(rs.getString("customer_name"));
+                    ratings.setRestaurantName(rs.getString("restaurant_name"));
+                    ratings.setRestaurantId(rs.getInt("restaurant_id"));
+                }
+                LOGGER.info("Rating Id" + ratings.getRatingId());
+                LOGGER.info("Rating Code" + ratings.getRatingCode());
+                LOGGER.info("Customer Id" + ratings.getCustomerId());
+                LOGGER.info("Customer Name" + ratings.getCustomerName());
+                LOGGER.info("Restaurant Name" + ratings.getRestaurantName());
+                LOGGER.info("Restaurant Id" + ratings.getRestaurantId());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            ConnectionManager.closePool();
+        }
+        return ratings;
+    }
+
 }

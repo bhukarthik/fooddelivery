@@ -42,4 +42,23 @@ public class RestaurantsServiceImpl implements RestuarantsService {
         int id = myObj1.nextInt();
         restaurantsDAO.getRestaurantsById(id);
     }
+    public void getTopRestaurants(int ratings){
+        Restaurants restaurants = new Restaurants();
+        restaurantsDAO.getTopRestaurantsById(ratings);
+        if(restaurants.getRatingId()==5){
+            LOGGER.info("Elite Restaurant");
+        }
+        else if (restaurants.getRatingId() ==4){
+            LOGGER.info("Premium Restaurant");
+        }
+        else if (restaurants.getRatingId() ==3){
+            LOGGER.info("Class A Restaurant");
+        }
+        else if (restaurants.getRatingId() ==2){
+            LOGGER.info("Class B Restaurant");
+        }
+        else if (restaurants.getRatingId() ==1){
+            LOGGER.info("Class C Restaurant");
+        }
+    }
 }
