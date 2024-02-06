@@ -18,8 +18,8 @@ public class ValidEmployeeNameTest {
         return new Object[][]{{"David"}};
     }
     @Test(dataProvider = "ValidFirstName-provider")
-    public void getItemName(String data) {
-        menuDAO.getItemName(data);
-        Assert.assertEquals(data, "EGG");
+    public void getEmployeesById(String data) {
+        employeesDAO.getEmployeesById(Integer.parseInt(data));
+        Assert.assertEquals(data, "David");
     }
 }

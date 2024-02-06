@@ -12,7 +12,7 @@ public class MenuNameTest {
 
     @DataProvider(name = "ItemName-provider")
     public Object[][] findMethod() {
-        return new Object[][]{{"David"}};
+        return new Object[][]{{"EGG"}};
     }
     @Test(dataProvider = "ItemName-provider")
     public void getItemName(String data) {

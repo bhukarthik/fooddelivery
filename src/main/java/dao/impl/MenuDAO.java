@@ -31,7 +31,6 @@ public class MenuDAO {
                     LOGGER.info("Price" + menus.getPrice());
                 }
 
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

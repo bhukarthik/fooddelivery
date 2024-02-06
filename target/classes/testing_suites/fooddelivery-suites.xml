@@ -5,12 +5,14 @@
     <test name = "FoodDelivery Test">
         <classes>
             <class name = "com.solvd.fooddelivery.TopRestaurantTest"/>
-            <class name = "com.solvd.fooddelivery.CouponsTest"/>
+            <class name = "com.solvd.fooddelivery.AddCouponTest"/>
             <class name = "com.solvd.fooddelivery.CustomersTest"/>
             <class name = "com.solvd.fooddelivery.EmployeesTest"/>
             <class name = "com.solvd.fooddelivery.RatingsTest"/>
             <class name = "com.solvd.fooddelivery.TransportaionModesTest"/>
-            <class name = "com.solvd.fooddelivery.MenuTest"/>
+            <class name = "com.solvd.fooddelivery.MenuPriceTest"/>
+            <class name = "com.solvd.fooddelivery.MenuNameTest"/>
+            <class name = "com.solvd.fooddelivery.FreeCouponTest"/>
         </classes>
     </test>
 </suite>

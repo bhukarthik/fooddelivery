@@ -14,7 +14,7 @@ public class MenuPriceTest {
 
     @DataProvider(name = "itemPrice-provider")
     public Object[][] PriceMethod() {
-        return new Object[][]{{"12.99"}};
+        return new Object[][]{{"11.99"}};
     }
 
 
@@ -22,7 +22,7 @@ public class MenuPriceTest {
     @Test(dataProvider = "itemPrice-provider")
     public void getItemPrice(String data) {
         menuDAO.getItemPrice(Float.parseFloat(data));
-        Assert.assertEquals(data, "12.99");
+        Assert.assertEquals(data, "11.99");
     }
 
 

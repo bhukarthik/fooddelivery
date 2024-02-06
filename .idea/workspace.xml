@@ -5,38 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce222ccf-13ed-4be6-a0de-f52869d7dced" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/MenuDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/impl/TransportationModeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/FreeCouponTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuNameTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuPriceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/ValidEmployeeNameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bin/Menus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bin/Menus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CouponsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CouponsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/CouponsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/CouponsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/RatingsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/RatingsDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/CouponsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/CouponsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/impl/RatingsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/impl/RatingsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/testing_suites/fooddelivery-suites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/testing_suites/fooddelivery-suites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/CouponsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/AddCouponTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/CustomersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/CustomersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/EmployeesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/EmployeesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/RatingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/RatingsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/TopRestaurantTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/TopRestaurantTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/TransportaionModesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/TransportaionModesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bin/Menus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bin/Menus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bin/Ratings.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bin/Ratings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/CouponsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/CouponsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/RatingsDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/RatingsDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/impl/RatingsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/impl/RatingsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/impl/MenuDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/impl/MenuDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuPriceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/MenuPriceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/ValidEmployeeNameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/solvd/fooddelivery/ValidEmployeeNameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dao/impl/MenuDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/impl/MenuDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/testing_suites/fooddelivery-suites.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/testing_suites/fooddelivery-suites.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/CouponsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/CouponsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/CustomersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/CustomersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/EmployeesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/EmployeesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/RatingsTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/RatingsTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/TopRestaurantTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/TopRestaurantTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/TransportaionModesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/TransportaionModesTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/CouponsTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/solvd/fooddelivery/MenuTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,22 +54,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "11",
-    "last_opened_file_path": "C:/Users/karth/Documents/Exam/apitesting",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karth/Documents/Exam/apitesting&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.MenuNameTest">
-    <configuration name="CouponsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RunManager" selected="TestNG.ValidEmployeeNameTest">
+    <configuration name="MenuPriceTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="fooddelivery" />
       <extension name="coverage">
         <pattern>
@@ -101,41 +78,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.solvd.fooddelivery" />
-      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.CouponsTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuNameTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="fooddelivery" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.solvd.fooddelivery.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.solvd.fooddelivery" />
-      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.MenuNameTest" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MenuTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="fooddelivery" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.solvd.fooddelivery.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.solvd.fooddelivery" />
-      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.MenuTest" />
+      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.MenuPriceTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -160,6 +103,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TopRestaurantTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="fooddelivery" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solvd.fooddelivery.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solvd.fooddelivery" />
+      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.TopRestaurantTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TransportaionModesTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="fooddelivery" />
       <extension name="coverage">
@@ -177,13 +137,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidEmployeeNameTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="fooddelivery" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.solvd.fooddelivery.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.solvd.fooddelivery" />
+      <option name="MAIN_CLASS_NAME" value="com.solvd.fooddelivery.ValidEmployeeNameTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.MenuNameTest" />
-        <item itemvalue="TestNG.MenuTest" />
+        <item itemvalue="TestNG.ValidEmployeeNameTest" />
         <item itemvalue="TestNG.TransportaionModesTest" />
-        <item itemvalue="TestNG.CouponsTest" />
+        <item itemvalue="TestNG.TopRestaurantTest" />
         <item itemvalue="TestNG.RatingsTest" />
+        <item itemvalue="TestNG.MenuPriceTest" />
       </list>
     </recent_temporary>
   </component>
