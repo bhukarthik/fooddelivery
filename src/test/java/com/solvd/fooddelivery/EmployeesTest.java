@@ -16,7 +16,6 @@ public class EmployeesTest {
     }
     @Test(dataProvider = "empid-provider")
     public void testFindEmployeeById(String data){
-        System.out.println("Data"+data);
         employeesService.getEmployeeIdTest(Integer.parseInt(data));
         Assert.assertEquals(data,"103");
     }

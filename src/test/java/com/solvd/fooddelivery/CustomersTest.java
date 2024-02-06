@@ -16,6 +16,7 @@ public class CustomersTest {
     public Object[][] dpMethod(){
         return new Object[][] {{"8019792024"}};
     }
+
     @Test (dataProvider = "phoneNumber-provider")
     public void testFindCustomerByPhone(String data){
         System.out.println("Data"+data);

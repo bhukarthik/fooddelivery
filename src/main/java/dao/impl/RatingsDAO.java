@@ -17,7 +17,7 @@ import java.sql.SQLException;
 public class RatingsDAO {
     private static final Logger LOGGER = (Logger) LogManager.getLogger(RatingsDAO.class);
     public static final String ratingsSQL = "select * from employees where empid=?";
-    public static final String rateidSqL = "select * from ratings where ratingid=?";
+    public static final String rateidSqL = "SELECT * FROM fooddelivery.ratings where CAST(rating_code as DECIMAL) = CAST(? AS DECIMAL)";
 
     public void addRatings(Ratings ratings) {
         try (Connection connection = ConnectionManager.get();
@@ -37,11 +37,12 @@ public class RatingsDAO {
             ConnectionManager.closePool();
         }
     }
-   public Ratings findRatingById(int ratingID ) {
+   public void findRatingByCode(float ratingCode ) {
+        LOGGER.info("Rating value "+ratingCode);
         Ratings ratings = new Ratings();
         try (Connection connection = ConnectionManager.get();
              PreparedStatement preparedStatement = connection.prepareStatement(rateidSqL)){
-            preparedStatement.setInt(1, ratingID);
+            preparedStatement.setFloat(1,ratingCode);
             try(ResultSet rs = preparedStatement.executeQuery();) {
                 if (rs.next()) {
                     ratings.setRatingId(rs.getInt("rating_id"));
@@ -63,7 +64,6 @@ public class RatingsDAO {
         } finally {
             ConnectionManager.closePool();
         }
-        return ratings;
     }
 
 }

@@ -9,6 +9,9 @@ public class Menus {
     private int restaurantId;
     private int menuItemsId;
 
+    public Menus() {
+    }
+
     public Menus(int menuId, String itemName, float price, int couponId, int cuisineId, int restaurantId1, int menuItemsId) {
         this.menuId = menuId;
         this.itemName = itemName;

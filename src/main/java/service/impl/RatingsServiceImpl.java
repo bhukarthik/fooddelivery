@@ -11,4 +11,7 @@ public class RatingsServiceImpl implements RatingsService {
     public void createRatings(Ratings ratings) {
         ratingsDAO.addRatings(ratings);
     }
+    public void findRatingByCode(float ratingCode ){
+        ratingsDAO.findRatingByCode(ratingCode);
+    }
 }

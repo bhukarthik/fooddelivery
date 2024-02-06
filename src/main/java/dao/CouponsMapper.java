@@ -5,4 +5,5 @@ import bin.Ratings;
 
 public interface CouponsMapper {
     public void addCoupons(Coupons coupons);
+
 }

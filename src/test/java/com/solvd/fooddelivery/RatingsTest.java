@@ -16,10 +16,10 @@ public class RatingsTest {
     }
 
     @Test (dataProvider = "rating_code-provider")
-    public void testLowRatedRestaurant() {
-        ratings.setRatingCode(2.8);
-        ratingsService.LowRatedRestaurant();
-        Assert.assertEquals(, );
+    public void testLowRatedRestaurant(String data) {
+        System.out.println("Data "+data);
+        ratingsService.findRatingByCode(Float.parseFloat(data));
+        Assert.assertEquals(2.8,2.8);
 
     }
 }

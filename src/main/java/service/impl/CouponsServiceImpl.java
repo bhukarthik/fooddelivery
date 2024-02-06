@@ -49,4 +49,5 @@ public class CouponsServiceImpl implements CouponsService {
         //couponsObj.setCoupon_id(stringEmp);*/
         couponsDAO.addCoupons(couponsObj);
     }
+
 }
